@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+// colors
+$blue: #029ae3;
+$green: #a6c33a;
+$white: #fff;
+$light-green: #a8c43b;
+$light-blue: #039be6;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #000;
+  background-color: $white;
+}
+
+// common classes start
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.color-blue {
+  color: $blue;
+}
+
+.bg-blue {
+  background: $blue;
+}
+
+.color-green {
+  color: $green;
+}
+
+.color-white {
+  color: $white;
+}
+
+.color-light-green {
+  color: #a8c43b;
+}
+
+.color-light-blue {
+  color: $light-blue !important;
+}
+
+.line {
+  height: 4px;
+  width: 100%;
+  background-color: $green;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+// common classes end
+
+.page {
+  position: relative;
+  // max width of a4 paper
+  max-width: 21cm;
+  margin: 50px auto;
+  height: 29.7cm;
+  border: 1px solid #000;
+  padding-top: 23px;
+
+  .left-content {
+    position: absolute;
+    left: 30px;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 230px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    overflow: hidden;
+    z-index: 2;
+    background: $white;
+
+    .blue-divider {
+      height: 4px;
+      width: 100%;
+      background-color: $blue;
+      border: none;
+    }
+
+    .heading {
+      padding: 10px 20px 8px;
+      gap: 20px;
+
+      .logo {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .info,
+    .instructions,
+    .contact {
+      padding: 20px 10px;
+      gap: 10px;
+
+      .info-heading {
+        color: #029be5;
+      }
+
+      .info-details {
+        color: #2d2d2d;
+      }
+
+      .info-sub-details {
+        color: #a2a2a2;
+      }
+
+      .info-link {
+        text-decoration: underline;
+      }
+
+      .info-m-no {
+        color: $light-blue;
+      }
+    }
+  }
+
+  .first-h1 {
+    padding-left: 34%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: $white;
+
+    span {
+      margin-left: 4px;
+    }
+  }
+  .right-content {
+    background: #ecf3ec;
+    height: 100%;
+
+    .heading-section {
+      position: relative;
+      padding: 8px;
+      gap: 8px;
+      margin-bottom: 4px;
+
+      &.second {
+        padding-right: 150px;
+      }
+
+      .card {
+        position: absolute;
+        top: -10px;
+        right: 30px;
+        border-radius: 10px;
+        background: $white;
+        height: 110px;
+        padding: 40px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+          rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        color: #039be5;
+
+        .grade {
+          color: #02c7e5;
+        }
+      }
+    }
+
+    .inner-wrapper {
+      padding-left: 260px;
+
+      .list {
+        margin-top: 12px;
+        justify-content: space-around;
+
+        .list-row {
+          gap: 10px;
+
+          .list-item {
+            gap: 8px;
+
+            &:nth-child(4n + 1) {
+              .list-indecator {
+                color: #039be4;
+              }
+            }
+
+            &:nth-child(4n + 2) {
+              .list-indecator {
+                color: #02c8e5;
+              }
+            }
+
+            &:nth-child(4n + 3) {
+              .list-indecator {
+                color: #02e596;
+              }
+            }
+
+            &:nth-child(4n + 4) {
+              .list-indecator {
+                color: #a8c43c;
+              }
+            }
+          }
+        }
+      }
+
+      .biomarkers {
+        padding: 10px 15px;
+
+        .text {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 1.5;
+          color: #333;
+          margin-bottom: 8px;
+        }
+
+        .tabs {
+          gap: 8px;
+          justify-content: space-between;
+
+          .tab {
+            background: white;
+            border-radius: 40px;
+            overflow: hidden;
+            align-items: center;
+            padding-left: 4px;
+            gap: 4px;
+            width: 150px;
+            justify-content: space-between;
+
+            .img-wrapper {
+              height: 35px;
+              width: 35px;
+              border-radius: 50%;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .details {
+              padding: 2px 15px;
+              border-radius: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    .cards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 10px;
+      justify-content: space-between;
+
+      .card {
+        width: 30%;
+        gap: 8px;
+        // align-items: center;
+        justify-content: space-between;
+
+        .card-image {
+          width: 70px;
+          min-width: 70px;
+          height: 100%;
+          align-self: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .card-details {
+          flex: 1 1;
+          .primary {
+            color: $light-blue;
+          }
+          .card-details {
+            color: #2e2e2e;
+          }
+        }
+      }
+    }
+  }
+
+  &.second {
+    .heading {
+      padding: 0px 30px 20px;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        height: 70px;
+
+        img {
+          height: 100%;
+        }
+      }
+      .text {
+        flex: 1 1;
+        text-align: center;
+      }
+    }
+    .table {
+      margin: 50px 20px;
+      background: #f4f7e6;
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      th {
+        color: $white !important;
+      }
+      
+      th,
+      td {
+        text-align: left;
+        padding: 6px 6px;
+        border-bottom: 1px solid #ddd;
+        color: #2f3c42;
+      }
+
+      // each 2nd tr selector
+      tr:nth-child(2n) {
+        background: #f4f7e6;
+      }
+
+      tr {
+        background: #ececec;
+
+        .master-row {
+          padding: 8px;
+          color: #039be4;
+          background: #bae3f7;
+        }
+
+        // all second td selectors
+        td:nth-child(2) {
+          color: $light-green;
+        }
+      }
+    }
+  }
+}

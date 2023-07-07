@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Report</title>
+  </head>
+  <body>
+    @foreach($reports as $report)
+    <div class="page first-page d-flex flex-column">
+      <div class="left-content d-flex flex-column">
+        <div class="heading d-flex align-center justify-center">
+          <div class="logo">
+            <img src="images/logo.png" alt="logo" />
+          </div>
+        </div>
+        <hr class="blue-divider" />
+        <div class="info d-flex flex-column">
+          <div class="info-item">
+            <div class="info-heading">Name</div>
+            <div class="info-details">{{ $report->patient->first_name }}</div>
+          </div>
+          <br>
+          <div class="info-item">
+            <div class="info-heading">Last Name</div>
+            <div class="info-details">{{ $report->patient->last_name }}</div>
+            <!-- <div class="info-sub-details">Cardiovascular Department</div> -->
+          </div>
+          <br>
+          <div class="info-item">
+            <div class="info-heading">Type</div>
+            <div class="info-details">03/01/2021</div>
+            <div class="info-details">(Follow-Up 9)</div>
+          </div>
+        </div>
+        <hr class="blue-divider" />
+        <div class="instructions">
+          <div class="info-heading">Patient Portal Instructions</div>
+          <div class="info-details">
+            Access your patient portal, powered by PhysioAge Health Analytics,
+            from your device or desktop at
+          </div>
+          <div class="info-link color-light-green">
+            https://welllifem.com.pages.on-traport.net/ExecutivePhysicals
+          </div>
+        </div>
+        <hr class="blue-divider" />
+        <div class="contact">
+          <div class="info-details">
+            You may contact Well Life Family Medicine by calling us at
+          </div>
+          <div class="info-m-no">(806) 355-9355</div>
+        </div>
+      </div>
+      <h1 class="first-h1 color-blue w-100 d-flex justify-center">
+        Executive <span class="color-green">Physical Exam</span>
+      </h1>
+      <div class="right-content w-100">
+        <div class="inner-wrapper d-flex flex-column align-center w-100">
+          <div
+            class="heading-section bg-blue w-100 d-flex flex-column align-center"
+          >
+            <h1 class="summary color-white">Your Result Summary</h1>
+            <span class="visit color-white"
+              >Visit your patient to see individual results</span
+            >
+          </div>
+          <div class="w-100 line"></div>
+          <div class="biomarkers d-flex flex-column">
+            <p class="text">Your Biomarkers of Aging</p>
+            <div class="d-flex tabs flex-wrap">
+              <div class="tab d-flex">
+                <div class="img-wrapper">
+                  <img src="images/bubble.png" alt="heart" />
+                </div>
+                <div class="details bg-blue d-flex flex-column">
+                  <span class="color-white">PhysioAge</span>
+                  <span class="color-white">51.1 Years</span>
+                </div>
+                < class="details bg-blue d-flex flex-column">
+                  <span class="color-white">PhysioAge</span>
+                  <span class="color-white">51.1 Years</span>
+      
+              </div>
+              <div class="tab d-flex">
+                <div class="img-wrapper">
+                  <img src="images/dna.png" alt="heart" />
+                </div>
+                <div class="details bg-blue d-flex flex-column">
+                  <span class="color-white">TelomerAge</span>
+                  <span class="color-white">58 Years</span>
+                </div>
+              </div>
+              <div class="tab d-flex">
+                <div class="img-wrapper">
+                  <img src="images/shield.png" alt="heart" />
+                </div>
+                <div class="details bg-blue d-flex flex-column">
+                  <span class="color-white">ImmunoAge</span>
+                  <span class="color-white">54 Years</span>
+                </div>
+              </div>
+              <div class="tab d-flex">
+                <div class="img-wrapper">
+                  <img src="images/heart.png" alt="heart" />
+                </div>
+                <div class="details bg-blue d-flex flex-column">
+                  <span class="color-white">CardioAge</span>
+                  <span class="color-white">57 Years</span>
+                </div>
+              </div>
+              <div class="tab d-flex">
+                <div class="img-wrapper">
+                  <img src="images/lungs.png" alt="heart" />
+                </div>
+                <div class="details bg-blue d-flex flex-column">
+                  <span class="color-white">PulmoAge</span>
+                  <span class="color-white">88 Years</span>
+                </div>
+              </div>
+              <div class="tab d-flex">
+                <div class="img-wrapper">
+                  <img src="images/mind.png" alt="heart" />
+                </div>
+                <div class="details bg-blue d-flex flex-column">
+                  <span class="color-white">NeuroAge</span>
+                  <span class="color-white">30 Years</span>
+                </div>
+              </div>
+              <div class="tab d-flex">
+                <div class="img-wrapper">
+                  <img src="images/sun.png" alt="heart" />
+                </div>
+                <div class="details bg-blue d-flex flex-column">
+                  <span class="color-white">CutoAge</span>
+                  <span class="color-white">35 Years</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="heading-section bg-blue w-100 d-flex flex-column align-center second"
+          >
+            <h1 class="card d-flex align-center justify-center">
+              <span class="grade">B -</span> 2.95
+            </h1>
+            <h1 class="summary color-white">Your Report Card</h1>
+            <span class="visit color-white">Your GPA (4-point scale):</span>
+          </div>
+          <div class="w-100 line"></div>
+          <div class="list w-100 d-flex">
+            <div class="list-row d-flex flex-column">
+              <div class="list-item d-flex">
+                <span class="list-indecator">A</span
+                ><span>Helthspan Potential</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">B</span><span>Heart Health</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">C</span
+                ><span>Cardiovascular Risk</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">D</span
+                ><span>Diabetes & Glucose</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">A</span
+                ><span>Body Composition</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">A</span><span>Lung Health</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">C</span><span>Brain Health</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">D</span><span>Hormone Health</span>
+              </div>
+              <div class="list-item d-flex"></div>
+            </div>
+            <div class="list-row d-flex flex-column">
+              <div class="list-item d-flex">
+                <span class="list-indecator">A</span><span>Blood</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">B</span><span>Nutrition</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">C</span
+                ><span>Trace Essential Minerals</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">D</span
+                ><span>Major Essential Minerals</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">B</span
+                ><span>Kidney Functions</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">B</span
+                ><span>Liver Functions</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">C</span
+                ><span>Immune Health and Inflammation</span>
+              </div>
+              <div class="list-item d-flex">
+                <span class="list-indecator">D</span
+                ><span>Infectious disease</span>
+              </div>
+              <div class="list-item d-flex"></div>
+            </div>
+          </div>
+        </div>
+        <div class="heading-section bg-blue w-100 d-flex flex-column align-center">
+            <h1 class="summary color-white">Your Recommendations</h1>
+            <h2 class="visit color-white"
+              >From Dr. John Doe</h2
+            >
+          </div>
+          <div class="w-100 line"></div>
+          <div class="cards-wrapper">
+            <div class="card d-flex">
+              <div class="card-image">
+                <img src="images/diet.png" alt="heart" />
+              </div>
+              <div class="card-details d-flex flex-column">
+                <div class="primary">Time restriction eating</div>
+                <div class="card-details">Eat between 12 pm to 8 pm daily Based on your Percent Bodyfat</div>
+              </div>
+            </div>
+            <div class="card d-flex">
+              <div class="card-image">
+                <img src="images/lifestyle.png" alt="heart" />
+              </div>
+              <div class="card-details d-flex flex-column">
+                <div class="primary">Start meditation</div>
+                <!-- <div class="card-details">Eat between 12 pm to 8 pm daily Based on your Percent Bodyfat</div> -->
+              </div>
+            </div>
+            <div class="card d-flex">
+              <div class="card-image">
+                <img src="images/Exeercise.png" alt="heart" />
+              </div>
+              <div class="card-details d-flex flex-column">
+                <div class="primary">Start HIIT training</div>
+                <div class="card-details">follow the guide Based on your ImmunoAge</div>
+              </div>
+            </div>
+            <div class="card d-flex">
+              <div class="card-image">
+                <img src="images/supplimments.png" alt="heart" />
+              </div>
+              <div class="card-details d-flex flex-column">
+                <div class="primary">Vitamin C 500 mg</div>
+                <div class="card-details">Take one a day with food</div>
+              </div>
+            </div>
+            <div class="card d-flex">
+              <div class="card-image">
+                <img src="images/supplimments.png" alt="heart" />
+              </div>
+              <div class="card-details d-flex flex-column">
+                <div class="primary">TA-65 500 IU</div>
+                <div class="card-details">Take one a day first thing in the morning Based on your TelomerAge</div>
+              </div>
+            </div>
+            <div class="card d-flex">
+              <div class="card-image">
+                <img src="images/hormone.png" alt="heart" />
+              </div>
+              <div class="card-details d-flex flex-column">
+                <div class="primary">Estradiol 5 mg/ml cream 30 ml Topi-pump</div>
+                <div class="card-details">Apply 2 pumps behind knees daily after showing Based on your Estradiol</div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="page second">
+      <div class="heading d-flex">
+        <div class="logo">
+          <img src="images/logo.png" alt="logo" />
+        </div>
+        <h1 class="text color-green"><span class="color-blue">Executive</span> Physical Exam</h1>
+      </div>
+      <div class="mb-4 p-10 bg-blue d-flex align-center justify-center flex-column">
+        <h1 class="color-white">Execeptional Results</h1>
+        <span class="color-white">Physician's Report</span>
+      </div>
+      <div class="line w-100"></div>
+      <div class="table">
+        <table class="w-100">
+          <tr>
+            <th class="bg-blue color-white">Name</th>
+            <th class="bg-blue color-white">Result</th>
+            <th class="bg-blue color-white">Units</th>
+            <th class="bg-blue color-white">Lab Ref Range</th>
+            <th class="bg-blue color-white">Optimal Range</th>
+            <th class="bg-blue color-white">Baseline</th>
+            <th class="bg-blue color-white">Change</th>
+            <th class="bg-blue color-white">Source</th>
+          </tr>
+          <tr>
+            <td colspan="8" class="master-row">Arterial Thickness</td>
+          </tr>
+          <tr>
+            <td>Right Carotid Artery Plaque</td>
+            <td>ABSENT</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="color-light-blue text-center" colspan="2">ABSENT</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Left Carotid Artery Plaque</td>
+            <td>ABSENT</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="color-light-blue text-center" colspan="2">ABSENT</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="master-row" colspan="8">Cardiovascular Risk</td>
+          </tr>
+          <tr>
+            <td>Total Cholesterol</td>
+            <td>167</td>
+            <td>mg/dL</td>
+            <td>125-200</td>
+            <td>122-175</td>
+            <td></td>
+            <td>173</td>
+            <td>-3%</td>
+          </tr>
+          <tr>
+            <td>Very Low Density Lipoprotein 1</td>
+            <td>16</td>
+            <td>mg/dL</td>
+            <td>5-40</td>
+            <td>&lt;30</td>
+            <td></td>
+            <td>24</td>
+            <td>-33%</td>
+          </tr>
+          <tr>
+            <td>Cholesterol/HDL Ratio</td>
+            <td>1.6</td>
+            <td>Ratio</td>
+            <td></td>
+            <td>&lt;3.0</td>
+            <td></td>
+            <td>3.3</td>
+            <td>-52%</td>
+          </tr>
+          <tr>
+            <td>Coenzyme Q10</td>
+            <td>1.8</td>
+            <td>mg/dL</td>
+            <td>0.44-1.64</td>
+            <td>1.50-3.00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>LDL/HDL Ratio</td>
+            <td>1.9</td>
+            <td>Ratio</td>
+            <td></td>
+            <td>1.50-3.00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="master-row" colspan="8">Diabetes & Glucose</td>
+          </tr>
+          <tr>
+            <td>Insulin</td>
+            <td>10</td>
+            <td>μlU/mL</td>
+            <td>&lt;16</td>
+            <td>&lt;5.0</td>
+            <td></td>
+            <td>12.8</td>
+            <td>-22%</td>
+          </tr>
+          <tr>
+            <td class="master-row" colspan="8">Cognitive Function</td>
+          </tr>
+          <tr>
+            <td>Standard Composite Memory</td>
+            <td>117</td>
+            <td></td>
+            <td>90-109</td>
+            <td>&gt;109</td>
+            <td></td>
+            <td>106</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td>Standard Verbal Memory</td>
+            <td>122</td>
+            <td></td>
+            <td>90-109</td>
+            <td>&gt;109</td>
+            <td></td>
+            <td>109</td>
+            <td>12%</td>
+          </tr>
+          <tr>
+            <td>Standard Visual Memory</td>
+            <td>118</td>
+            <td></td>
+            <td>90-109</td>
+            <td>&gt;109</td>
+            <td></td>
+            <td>100</td>
+            <td>18%</td>
+          </tr>
+          <tr>
+            <td>Standard Phychoomotor Speed</td>
+            <td>109</td>
+            <td></td>
+            <td>90-109</td>
+            <td>&gt;109</td>
+            <td></td>
+            <td>94</td>
+            <td>16%</td>
+          </tr>
+          <tr>
+            <td>Standard Cognitive Flexibility</td>
+            <td>110</td>
+            <td></td>
+            <td>90-109</td>
+            <td>&gt;109</td>
+            <td></td>
+            <td>110</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <td class="master-row" colspan="8">Sex Hormones</td>
+          </tr>
+          <tr>
+            <td>Free Testosterone</td>
+            <td>5</td>
+            <td>pg/mL</td>
+            <td>0.1-6.4.4</td>
+            <td>4.0-10.0</td>
+            <td></td>
+            <td>4.4</td>
+            <td>14%</td>
+          </tr>
+          <tr>
+            <td>Free Testosterone %</td>
+            <td>2</td>
+            <td>%</td>
+            <td>0.5-1.8</td>
+            <td>1.00-2.00</td>
+            <td></td>
+            <td>1.00</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>Estradiol</td>
+            <td>67</td>
+            <td>pg/mL</td>
+            <td></td>
+            <td>50.0-200.0</td>
+            <td></td>
+            <td>8.7</td>
+            <td>670%</td>
+          </tr>
+          <tr>
+            <td class="master-row" colspan="8">Thyroid Function</td>
+          </tr>
+          <tr>
+            <td>Thyroid Stimulating Hormone</td>
+            <td>1.2</td>
+            <td>mlU/L</td>
+            <td>0.4-4.5</td>
+            <td>0.025-1.500</td>
+            <td></td>
+            <td>1.400</td>
+            <td>-14%</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    @endforeach
+  </body>
+</html>

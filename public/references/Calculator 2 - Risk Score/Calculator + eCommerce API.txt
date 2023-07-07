@@ -1,0 +1,133 @@
+CALCULATOR
+
+The next module to work on would be to add this calculation to the site
+https://www.mesa-nhlbi.org/Calcium/ArterialAge.aspx
+
+FROM ME
+"We've figured out the Estimated Arterial Age and 95% Confidence Intervals."
+"Now, we are trying to figure out the Estimated Framingham 10-year Hard CHD Risk."
+
+---------------------------------------------------------------------
+Framingham Risk Score:
+
+"The Framingham risk score is somewhat out of date but here is the calculation"
+https://www.merckmanuals.com/medical-calculators/Framingham08-en.htm
+
+if ($gender == 'Female') {
+	$age_factor = 2.32888;
+	$total_chol_factor = 1.20904;
+	$hdl_chol_factor = -0.70833;
+	$avg_risk = 26.1931 
+	$risk_period_factor = 0.95012
+} else {
+	$age_factor = 3.06117;
+	$total_chol_factor = 1.12370;
+	$hdl_chol_factor = -0.93263;
+	$avg_risk = 23.9802 
+	$risk_period_factor = 0.88936
+}
+
+$sys_bp_factor = 1;
+$cig = 0.52873;
+$dm = 0.69154;
+
+$risk_factors = (ln($age) * $age_factor) + (ln($total_chol) * $total_chol_factor) + (ln($hdl_chol) * $hdl_chol_factor) + (ln($sys_bp) * $sys_bp_factor) + $cig + $dm - $avg_risk
+$risk = 100 * (1 - $risk_period_factor E($risk_factors))
+---------------------------------------------------------------------
+
+"Not sure what mesa does to adjust for the CCS"
+"I wouldn’t worry about the Framingham score at the bottom of this page
+as it isn’t exactly right using their artery age"
+https://www.mesa-nhlbi.org/Calcium/ArterialAge.aspx
+
+---------------------------------------------------------------------
+
+"Ideally do want to report the percentile for their age as well, but don’t need the probability of non zero"
+https://www.mesa-nhlbi.org/Calcium/input.aspx
+
+---------------------------------------------------------------------
+
+"Better Calculator"
+https://www.mesa-nhlbi.org/MESACHDRisk/MesaRiskScore/RiskScore.aspx
+
+---------------------------------------------------------------------
+
+"NEWER CALCULATIONS"
+
+*** Cardiovascular Risk Assessment (10-year, Revised Pooled Cohort Equations 2018) ***
+https://www.merckmanuals.com/medical-calculators/CVRiskRevised2018-en.htm
+
+/*
+Race
+
+0 except Black or African American which is 1
+---
+American Indian or Alaska Native
+Asian
+Black or African American
+Native Hawaiian or Other Pacific Islander
+White
+*/
+
+/*
+Sex
+
+Female 1
+Male 2
+*/
+
+$age = $_input['age'];
+$race = $_input['race'];
+$sex = $_input['race'];
+
+$systolic_blood_pressure = $_input['systolic_blood_pressure'];
+$on_hypertension_med = $_input['on_hypertension_med']; // 0 or 1
+$diabetes = $_input['diabetes']; // 0 or 1
+$smoker = $_input['smoker']; // 0 or 1
+
+$total_cholesterol = $_input['total_cholesterol'];
+$hdl_cholesterol = $_input['hdl_cholesterol'];
+
+$logit_female = (-12.823110) + (0.106501 * $age) + (0.432440 * $race) + (0.000056 * ($systolic_blood_pressure * $systolic_blood_pressure)) + (0.017666 * $systolic_blood_pressure) + (0.731678 * $on_hypertension_med) + (0.943970 * $diabetes) + (1.009790 * $smoker) + (0.151318 * ($total_cholesterol / $hdl_cholesterol)) + (-0.008580 * $age * $race) + (-0.003647 * $systolic_blood_pressure * $on_hypertension_med) + (0.006208 * $systolic_blood_pressure * $race) + (0.152968 * $race * $on_hypertension_med) + (-0.000153 * $age * $systolic_blood_pressure) + (0.115232 * $race * $diabetes) + (-0.092231 * $race * $smoker) + (0.070498 * $race * ($total_cholesterol / $hdl_cholesterol)) + (-0.000173 * $race * $systolic_blood_pressure * $on_hypertension_med) + (-0.000094 * $age * $systolic_blood_pressure * $race)
+$10_year_risk_female = 100 / (1 + e(-$logit_female));
+
+$logit_male = -11.679980 + (0.064200 * $age) + (0.482835 * $race) + (-0.000061 * ($systolic_blood_pressure * $systolic_blood_pressure)) + (0.038950 * $systolic_blood_pressure) + (2.055533 * $on_hypertension_med) + (0.842209 * $diabetes) + (0.895589 * $smoker) + (0.193307 * $total_cholesterol / $hdl_cholesterol) + (-0.014207 * $systolic_blood_pressure * $on_hypertension_med) + (0.011609 * $systolic_blood_pressure * $race) + (-0.119460 * $on_hypertension_med * $race) + (0.000025 * $age * $systolic_blood_pressure) + (-0.077214 * $race * $diabetes) + (-0.226771 * $race * $smoker) + (-0.117749 * $race * $total_cholesterol / $hdl_cholesterol) + (0.004190 * $race * $on_hypertension_med * $systolic_blood_pressure) + (-0.000199 * $race * $age * $systolic_blood_pressure)
+$10_year_risk_male = 100 / (1 + e(-$logit_male))
+
+$10_year_risk = (abs($sex == 1) * $10_year_risk_female) + (abs($sex == 2) * $10_year_risk_male)
+
+*** Cardiovascular Risk Assessment (10-year, ACC/AHA 2013) ***
+https://www.merckmanuals.com/medical-calculators/ACCAHA2013.htm
+
+------------------------
+ECOMMERCE API
+
+We are wanting to integrate this api into our wordpress woocommerce store. 
+Is this something yall can do?
+
+https://api.thorne.com/swagger-ui.html
+
+Here is our store: 
+https://welllifefm.com/shop
+
+
+
+The Framingham risk score is somewhat out of date but here is the calculation
+
+https://www.merckmanuals.com/medical-calculators/Framingham08-en.htm
+
+For women: Age Factor = 2.32888; Total Chol Factor = 1.20904; HDL Chol Factor = -0.70833; Avg Risk = 26.1931 and Risk Period Factor = 0.95012
+For men: Age Factor = 3.06117; Total Chol Factor = 1.12370; HDL Chol Factor = -0.93263; Avg Risk = 23.9802 and Risk Period Factor = 0.88936
+
+---
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2621006/pdf/nihms84880.pdf
+
+I was actually talking about these
+https://www.mesa-nhlbi.org/Calcium/ArterialAge.aspx
+https://www.mesa-nhlbi.org/Calcium/input.aspx
+https://www.mesa-nhlbi.org/MESACHDRisk/MesaRiskScore/RiskScore.aspx
+
+But yes would also like to have
+*** Cardiovascular Risk Assessment (10-year, Revised Pooled Cohort Equations 2018) ***
+https://www.merckmanuals.com/medical-calculators/CVRiskRevised2018-en.htm

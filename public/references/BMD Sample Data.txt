@@ -1,0 +1,41 @@
+Sample Data 
+"BMD Computation"
+INPUT:
+Age: 50;
+Gender: Male;
+Region: Spine L1-L4;
+BMD: 1.2;
+
+Output:
+Expected BMD: 1.2;
+Equivalent Age: 50;
+------------------
+Age: 39;
+Gender: Female;
+Region: Femur Neck;
+BMD: 2.7
+
+Output:
+Expected BMD: 0.962;
+Equivalent Age: 25;
+------------------
+Age: 50;
+Gender: Male;
+Region: Radius Ultradistal;
+BMD: .9
+
+Output:
+Expected BMD: 0.523;
+Equivalent Age: 25;
+------------------
+Age: 29;
+Gender: Male;
+Region: Total Body Advanced;
+BMD: 4.3
+
+Output:
+Expected BMD: 1.2;
+Equivalent Age: 25;
+
+
+

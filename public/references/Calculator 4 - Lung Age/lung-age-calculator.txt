@@ -1,0 +1,9 @@
+https://www.empr.com/home/tools/medical-calculators/lung-age/
+
+Formula
+Age(M) = (0.0414*height-2.19-FEV1)/0.0244
+Age(F) = (0.0342*height-1.578-FEV1)/0.0255
+
+
+
+
